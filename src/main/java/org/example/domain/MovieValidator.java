@@ -1,4 +1,4 @@
-package Domain;
+package org.example.domain;;
 
 public class MovieValidator {
     /**

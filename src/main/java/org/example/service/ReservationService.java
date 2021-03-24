@@ -1,10 +1,10 @@
-package Service;
+package org.example.service;
 
-import Domain.Movie;
-import Domain.Reservation;
-import Domain.ReservationValidator;
-import Repository.IRepository;
-import Repository.RepositoryException;
+import org.example.domain.Movie;
+import org.example.domain.Reservation;
+import org.example.domain.ReservationValidator;
+import org.example.repository.IRepository;
+import org.example.repository.RepositoryException;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

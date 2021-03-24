@@ -1,7 +1,7 @@
-package Repository;
+package org.example.repository;;
 
-import Domain.Entity;
-import Domain.Movie;
+import org.example.domain.Entity;
+import org.example.domain.Movie;
 
 import java.util.List;
 

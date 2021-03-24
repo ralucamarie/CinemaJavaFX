@@ -1,4 +1,4 @@
-package Domain;
+package org.example.domain;
 
 public class Entity {
     private int idEntity;

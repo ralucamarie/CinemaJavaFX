@@ -1,6 +1,6 @@
-package Domain;
+package org.example.domain;
 
-public class Movie extends Entity{
+public class Movie extends org.example.domain.Entity {
     //CRUD film: id, titlu, an apariție,
     // preț bilet, în program. Prețul să fie strict pozitiv.
 

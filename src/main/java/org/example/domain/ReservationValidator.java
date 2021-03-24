@@ -1,7 +1,7 @@
-package Domain;
+package org.example.domain;
 
-import Repository.IRepository;
-import Repository.InMemoryRepository;
+import org.example.repository.IRepository;
+import org.example.repository.InMemoryRepository;
 
 public class ReservationValidator {
     /**

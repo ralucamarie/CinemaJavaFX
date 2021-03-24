@@ -1,11 +1,12 @@
-package Service;
+package org.example.service;
 
-import Domain.Movie;
-import Domain.MovieValidator;
-import Domain.Reservation;
-import Repository.IRepository;
-import Repository.InMemoryRepository;
-import Repository.RepositoryException;
+import org.example.domain.Movie;
+import org.example.domain.MovieValidator;
+import org.example.domain.Reservation;
+import org.example.repository.IRepository;
+import org.example.repository.InMemoryRepository;
+import org.example.repository.RepositoryException;
+
 
 import java.util.*;
 
