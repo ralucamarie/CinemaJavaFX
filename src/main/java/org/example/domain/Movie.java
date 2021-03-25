@@ -6,10 +6,10 @@ public class Movie extends org.example.domain.Entity {
 
     private String title;
     private int year;
-    private Integer ticketPrice;
+    private int ticketPrice;
     private boolean running;
 
-    public Movie(int id, String title, int year, Integer ticketPrice, boolean running) {
+    public Movie(int id, String title, int year, int ticketPrice, boolean running) {
         super(id);
         this.title = title;
         this.year = year;

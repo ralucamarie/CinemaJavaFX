@@ -13,17 +13,17 @@ import java.util.*;
 public class MovieService {
     private IRepository<Movie> movieRepository;
     private MovieValidator movieValidator;
-    private IRepository<Reservation> reservationRepository;
+   // private IRepository<Reservation> reservationRepository;
 
     /**
      * Movie Service Constructor
      * @param movieRepository
      * @param movieValidator
      */
-    public MovieService(InMemoryRepository movieRepository, MovieValidator movieValidator, InMemoryRepository reservationRepository) {
+    public MovieService(IRepository<Movie> movieRepository, MovieValidator movieValidator) {
         this.movieValidator = movieValidator;
         this.movieRepository = movieRepository;
-        this.reservationRepository = reservationRepository;
+       // this.reservationRepository = reservationRepository;
     }
 
     /**

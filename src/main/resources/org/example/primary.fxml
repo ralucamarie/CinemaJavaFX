@@ -5,14 +5,63 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.CheckBox?>
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
    <children>
-      <Label text="Movies" />
-      <Button fx:id="movies" text="View Movies" onAction="#switchToMovies"/>
+      <Label text="Movies:" />
+      <TableView fx:id="movieTable" editable="true">
+         <columns>
+            <TableColumn fx:id="colMovieId" text="Id">
+               <cellValueFactory>
+                  <PropertyValueFactory property="idEntity" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="colMovieTitle" text="Movie Title">
+               <cellValueFactory>
+                  <PropertyValueFactory property="title" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="colYear" text="Year">
+               <cellValueFactory>
+                  <PropertyValueFactory property="year" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="colTicketPrice" text="Ticket Price">
+               <cellValueFactory>
+                  <PropertyValueFactory property="ticketPrice" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="colRunning" text="Running">
+               <cellValueFactory>
+                  <PropertyValueFactory property="running" />
+               </cellValueFactory>
+            </TableColumn>
+         </columns>
+      </TableView>
+
+   <Label text = "Add Movie:"/>
+   <TextField fx:id="txtMovieId" promptText="Movie ID"/>
+   <TextField fx:id="txtTitle" promptText="Title"/>
+   <TextField fx:id="txtYear" promptText="Year"/>
+   <TextField fx:id="txtTicketPrice" promptText="Ticket Price"/>
+   <CheckBox fx:id="chkRunning" text="Running true/false"/>
+
+   <HBox alignment="CENTER" spacing="5">
+      <Button fx:id = "btnAddMovie" text="Add Movie" onAction="#btnAddMovieClick"/>
+      <!--<Button fx:id="btnUpdateMovie" text="Update Movie" onAction="#btnUpdateMovieClick"/>
+      <Button fx:id="btnDeleteSelected" text="Delete selected Movie" onAction="#btnDeleteSelectedMovieClick"/>-->
+   </HBox>
+
+      <!--<Button fx:id="movies" text="View Movies" onAction="#switchToMovies"/>
    </children>
    <children>
       <Label text="Reservations" />
-      <Button fx:id="reservations" text="View/Add Reservations" onAction="#switchToReservations"/>
+      <Button fx:id="reservations" text="View/Add Reservations" onAction="#switchToReservations"/>-->
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

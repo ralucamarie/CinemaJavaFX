@@ -6,8 +6,8 @@ import java.io.IOException;
 
 public class ReservationsController {
 
-    @FXML
-    private void switchToPrimary() throws IOException {
-        App.setRoot("primary");
-    }
+    //@FXML
+    //private void switchToPrimary() throws IOException {
+    //    App.setRoot("primary");
+    //}
 }
