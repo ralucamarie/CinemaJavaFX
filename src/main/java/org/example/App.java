@@ -21,7 +21,8 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-    private static Scene scene;
+    private static Scene movieScene;
+
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -31,7 +32,8 @@ public class App extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("primary.fxml"));
         Parent parentfxml = fxmlLoader.load();
-        this.scene = new Scene(parentfxml,640,480);
+        this.movieScene = new Scene(parentfxml,640,480);
+
 
         IRepository<Movie> movieRepository = new InMemoryRepository();
         IRepository<Reservation> reservationRepository = new InMemoryRepository();
@@ -53,7 +55,8 @@ public class App extends Application {
         primaryController.setServices(movieService,reservationService);
 
         stage.setTitle("Cinema Manager");
-        stage.setScene(this.scene);
+        stage.setScene(this.movieScene);
+
         stage.show();
 
 

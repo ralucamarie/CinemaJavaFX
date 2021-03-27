@@ -1,69 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
-<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.CheckBox?>
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
+
+<HBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
    <children>
-      <Label text="Movies:" />
-      <TableView fx:id="movieTable" editable="true">
-         <columns>
-            <TableColumn fx:id="colMovieId" text="Id">
-               <cellValueFactory>
-                  <PropertyValueFactory property="idEntity" />
-               </cellValueFactory>
-            </TableColumn>
-            <TableColumn fx:id="colMovieTitle" text="Movie Title">
-               <cellValueFactory>
-                  <PropertyValueFactory property="title" />
-               </cellValueFactory>
-            </TableColumn>
-            <TableColumn fx:id="colYear" text="Year">
-               <cellValueFactory>
-                  <PropertyValueFactory property="year" />
-               </cellValueFactory>
-            </TableColumn>
-            <TableColumn fx:id="colTicketPrice" text="Ticket Price">
-               <cellValueFactory>
-                  <PropertyValueFactory property="ticketPrice" />
-               </cellValueFactory>
-            </TableColumn>
-            <TableColumn fx:id="colRunning" text="Running">
-               <cellValueFactory>
-                  <PropertyValueFactory property="running" />
-               </cellValueFactory>
-            </TableColumn>
-         </columns>
-      </TableView>
+      <VBox alignment="CENTER" spacing="20.0">
+         <children>
+            <Label prefHeight="30" prefWidth="40" text="Movies:" />
+            <TableView fx:id="movieTable" editable="true">
+               <columns>
+                  <TableColumn fx:id="colMovieId" prefWidth="50.0" text="Id">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="idEntity" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colMovieTitle" prefWidth="200.0" text="Movie Title">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="title" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colYear" prefWidth="50.0" text="Year">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="year" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colTicketPrice" prefWidth="50.0" text="Ticket Price">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="ticketPrice" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colRunning" prefWidth="50.0" text="Running">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="running" />
+                     </cellValueFactory>
+                  </TableColumn>
+               </columns>
+            </TableView>
+      
+         <Label text="Add Movie:" />
+         <TextField fx:id="txtMovieId" promptText="Movie ID" />
+         <TextField fx:id="txtTitle" promptText="Title" />
+         <TextField fx:id="txtYear" promptText="Year" />
+         <TextField fx:id="txtTicketPrice" promptText="Ticket Price" />
+         <CheckBox fx:id="chkRunning" text="Running true/false" />
+            <HBox alignment="CENTER" spacing="5">
+               <Button fx:id="btnAddMovie" onAction="#btnAddMovieClick" text="Add Movie" />
+               <Button fx:id="btnUpdateMovie" onAction="#btnUpdateMovieClick" text="Update Movie" />
+               <Button fx:id="btnDeleteSelected" onAction="#btnDeleteSelectedMovieClick" text="Delete selected Movie" />
+               <!--<Button fx:id="btnViewReservationsForSelectedMovie" text="View Reservations for Selected" onAction="#btnViewReservationsForSelectedMovie"/>
+               <Button fx:id="btdAddReservation" text="Add reservation for selected Movie" onAction="#btnAddReservationClick"/>-->
 
-   <Label text = "Add Movie:"/>
-   <TextField fx:id="txtMovieId" promptText="Movie ID"/>
-   <TextField fx:id="txtTitle" promptText="Title"/>
-   <TextField fx:id="txtYear" promptText="Year"/>
-   <TextField fx:id="txtTicketPrice" promptText="Ticket Price"/>
-   <CheckBox fx:id="chkRunning" text="Running true/false"/>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="CENTER" spacing="20.0">
+         <children>
+            <Label prefHeight="30" prefWidth="40" text="Reservations:" />
+            <TableView fx:id="reservationTable" editable="true">
+               <columns>
+                  <TableColumn fx:id="colResId" prefWidth="50.0" text="Res. ID">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="idEntity" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colMovieIdRes" prefWidth="50.0" text="Movie Id">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="idMovie" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colCustomerCard" prefWidth="200.0" text="Customer Card">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="customerCard" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colDate" text="Date">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="dateTime" />
+                     </cellValueFactory>
+                  </TableColumn>
+               </columns>
+            </TableView>
+            <Label text="Add Reservation:" />
+            <TextField fx:id="txtReservationId" promptText="Reservation ID" />
+            <TextField fx:id="txtMovieResId" promptText="Movie ID" />
+            <TextField fx:id="txtCustomerCard" promptText="Customer Card" />
+            <TextField fx:id="txtDate" promptText="Date" />
+            <HBox alignment="CENTER" spacing="5">
+               <Button fx:id="btnAddReservation" onAction="#btnAddReservationClick" text="Add Reservation" />
+               <Button fx:id="btnUpdateReservation" onAction="#btnUpdateReservationClick" text="Update Movie" />
+               <Button fx:id="btnDeleteSelectedReservation" onAction="#btnDeleteSelectedReservationClick" text="Delete selected Reservation" />
 
-   <HBox alignment="CENTER" spacing="5">
-      <Button fx:id = "btnAddMovie" text="Add Movie" onAction="#btnAddMovieClick"/>
-      <!--<Button fx:id="btnUpdateMovie" text="Update Movie" onAction="#btnUpdateMovieClick"/>
-      <Button fx:id="btnDeleteSelected" text="Delete selected Movie" onAction="#btnDeleteSelectedMovieClick"/>-->
-   </HBox>
+            </HBox>
 
-      <!--<Button fx:id="movies" text="View Movies" onAction="#switchToMovies"/>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
    </children>
-   <children>
-      <Label text="Reservations" />
-      <Button fx:id="reservations" text="View/Add Reservations" onAction="#switchToReservations"/>-->
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+</HBox>
